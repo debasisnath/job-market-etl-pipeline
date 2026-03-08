@@ -2,7 +2,9 @@ import argparse
 
 from scraper.scraper_factory import get_scraper
 from utils.file_writer import save_json
+from utils.logger import get_logger
 
+logger = get_logger("pipeline")
 
 def main():
 
@@ -16,6 +18,7 @@ def main():
 
     args = parser.parse_args()
 
+    logger.info("Starting scraping pipeline")
     scraper = get_scraper(
         args.source,
         args.role,
@@ -26,6 +29,7 @@ def main():
     jobs = scraper.scrape()
 
     save_json(jobs, args.output)
+    logger.info("Jobs saved successfully")
 
 
 if __name__ == "__main__":

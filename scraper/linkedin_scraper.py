@@ -6,6 +6,9 @@ import time
 from scraper.base_scraper import BaseScraper
 from models.job_model import Job
 
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
 
 class LinkedInScraper(BaseScraper):
 
@@ -14,6 +17,8 @@ class LinkedInScraper(BaseScraper):
     def scrape(self):
 
         headers = {"User-Agent": "Mozilla/5.0"}
+
+        logger.info(f"Starting LinkedIn scrape for {self.role}")
 
         for page in range(self.pages):
 
@@ -28,6 +33,8 @@ class LinkedInScraper(BaseScraper):
             soup = BeautifulSoup(response.text, "html.parser")
 
             job_cards = soup.find_all("li")
+
+            logger.info("Scraping page %s", page+1)
 
             for job in job_cards:
 
@@ -49,7 +56,9 @@ class LinkedInScraper(BaseScraper):
                 self.jobs.append(job_obj.__dict__)
 
             time.sleep(1)
+            logger.info("Finished scraping page %s", page+1)
 
+        logger.info(f"Total jobs scraped: {len(self.jobs)}")
         return self.jobs
 
 
