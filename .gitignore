@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Jupyter/Databricks notebooks
+.ipynb_checkpoints/
+.notebooks/
+
+# Spark / Hadoop temp files
+spark-warehouse/
+.metastore_db/
+.derby/
+
+# Data files
+data/
+data_sample/*.csv
+data_sample/*.parquet
+data_sample/*.json
+
+# Configs and secrets
+*.yaml
+*.yml
+*.json
+*.ini
+*.cfg
+*.env
+
+# AWS credentials
+.aws/
+*.pem
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# GitHub Actions / CI
+.github/workflows/*.log
