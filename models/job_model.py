@@ -9,4 +9,5 @@ class Job:
     location: str
     job_link: str
     source: str
+    skills: list
     scraped_at: str

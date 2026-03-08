@@ -98,14 +98,14 @@ posting_date
 Example JSON:
 
 ```json
-{
- "job_id": "12345",
- "title": "Senior Data Engineer",
- "company": "Amazon",
- "location": "Bangalore",
- "skills": ["PySpark","AWS","Kafka"],
- "salary": "25-40 LPA",
- "date_posted": "2026-01-01"
+ {
+    "job_id": "https://in.linkedin.com/jobs/view/trainee-data-engineer-medinsight-dev-at-milliman-4363069172?position=2&pageNum=10&refId=vuoTK1y45V5fDPDPWqNblw%3D%3D&trackingId=zjp%2BC%2Bnp1bN36XCoT2j5pw%3D%3D",
+    "title": "Trainee Data Engineer - MedInsight (Dev)",
+    "company": "Milliman",
+    "location": "Gurgaon, Haryana, India",
+    "job_link": "https://in.linkedin.com/jobs/view/trainee-data-engineer-medinsight-dev-at-milliman-4363069172?position=2&pageNum=10&refId=vuoTK1y45V5fDPDPWqNblw%3D%3D&trackingId=zjp%2BC%2Bnp1bN36XCoT2j5pw%3D%3D",
+    "source": "linkedin",
+    "scraped_at": "2026-03-08T12:57:53.228967+00:00"
 }
 ```
 
@@ -280,3 +280,23 @@ config.yaml
 ```
 
 ---
+
+
+| Source    | Method                                                   |
+| --------- | -------------------------------------------------------- |
+| LinkedIn  | working guest API (what you already built)               |
+| Indeed    | simulated ingestion (HTML snapshot or API-like endpoint) |
+| Naukri    | JSON endpoint                                            |
+| Glassdoor | optional                                                 |
+
+
+#### Data Lake layer.
+
+data/
+   raw/
+      source=linkedin/
+         year=2026/
+            month=03/
+               day=08/
+                   jobs.json
+

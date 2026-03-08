@@ -45,12 +45,27 @@ git add . && git commit -m "update: $(date '+%Y-%m-%d %H:%M:%S') | $(date +%s)" 
 
 ##### RUN_SCRAPER
 ```bash
+# LINKEDIN
 python -m pipeline.run_scraper \
     --source linkedin \
     --role "data engineer" \
     --location India \
     --pages 5 \
-    --output data_sample/jobs_raw.json
+    --output data_sample/jobs_raw_linkedin.json
+
+
+
+
+
+
+# INDEED
+python -m pipeline.run_scraper \
+--source indeed \
+--role "data engineer" \
+--location India \
+--pages 3 \
+--output data_sample/jobs_raw_indeed.json
+
 
 ```
 
